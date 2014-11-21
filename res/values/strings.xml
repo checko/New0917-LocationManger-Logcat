@@ -4,5 +4,6 @@
     <string name="app_name">New0917</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="hello_msg">Show GPS Longitude, Latitude on LOGCAT....</string>
 
 </resources>
