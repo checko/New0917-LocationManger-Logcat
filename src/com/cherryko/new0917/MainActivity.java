@@ -30,7 +30,7 @@ public class MainActivity extends Activity implements LocationListener {
         for (int i=0;i<allProviders.size();i++)
             Log.d("ABC",": " + allProviders.get(i));
         
-        lm.requestLocationUpdates("gps", 0, 0, this);
+        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
         
         Location location = lm.getLastKnownLocation("gps");
         if (location == null) {
@@ -38,6 +38,12 @@ public class MainActivity extends Activity implements LocationListener {
             return;
         }
         
+    }
+    
+    @Override
+    protected void onStop() {
+    	lm.removeUpdates(this);
+    	super.onStop();
     }
 
     @Override
